@@ -34,22 +34,24 @@ This time a :boy: will write his ambitious application and will set the world on
 
 ################################################################################################################
 
-
 Steps to install and run:
 
 - npm i -g @adonisjs/cli
 - adonis new serverless-adonis
 - cd serverless-adonis
+- npm set strict-ssl false
 - npm install
 - npm run serve:dev (http://localhost:3333/)
 
 Git:
 
+
 - git init .
-- git add . && git commit -m "c" && git push origin main
+- npm install && npm run build && git add . && git commit -m "c" && git push origin typescript && vercel --prod
 
 Vercel: (Reference: https://blog.matheus.io/en/serverless/serverless-adonis-in-zeit-now/)
 
 - npm i -g now
 - Create vercel.json and fill it accordingly ("@now/node-server" is not maintained. Please use "@vercel/node" instead.)
+- npm run build (git rm --cached server.js -> to reflect .gitignore on the file)
 - vercel && vercel --prod
